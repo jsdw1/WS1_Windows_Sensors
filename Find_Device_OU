@@ -1,0 +1,3 @@
+Description -- Find the OU to which the device belongs
+
+([adsisearcher]"(&(name=$env:computername)(objectClass=computer))").findall().path
