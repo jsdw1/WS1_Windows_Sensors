@@ -1,0 +1,7 @@
+# Returns the list of apps installed by the user/administrator and not by the UEM on a current day
+# Return Type: String
+# Execution Context: System
+
+$DateStr = (Get-Date).ToString("yyyyMMdd")
+$GetAppsDate = Get-ItemProperty hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | select-object DisplayName,InstallSource,InstallDate| Where-Object InstallDate -eq $DateStr | Where-Object {$_.InstallSource -notlike "C:\ProgramData\AirWatchMDM\*\"}
+Write-Output $GetApps.DisplayName
