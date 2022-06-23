@@ -1,5 +1,6 @@
 # Returns the list of apps installed by the user/administrator and not by the UEM on a current day
 # Return Type: String
+# Created by : Bahubali Shervi
 # Execution Context: System
 
 $DateStr = (Get-Date).ToString("yyyyMMdd")
