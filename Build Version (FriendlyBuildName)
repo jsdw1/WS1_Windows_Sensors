@@ -1,0 +1,8 @@
+# # Report the build version of the Windows 10/11 -- Friendly Build Version Examples : 20H1,21H1,21H2
+# Return Type: String
+# Execution Context: System 
+# Execution Architecture: Auto
+
+
+$Version = Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name DisplayVersion
+$Version.DisplayVersion
